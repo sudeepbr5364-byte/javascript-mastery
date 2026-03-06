@@ -17,10 +17,7 @@ const checkEvenOdd = (num) => {
         return "Odd";
     }
 }
-function MultiplyBy2(num){
-    return num *2;
-}
-
+const MultiplyBy2 = (num) => num * 2;
 let numbers= [10,-5,0,7];
 for(let i = 0; i < numbers.length; i++){
     let num = numbers[i];
