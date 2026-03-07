@@ -1,4 +1,5 @@
 /*map()-Transfer data (Is used to change every item in an array)*/
+
 /*Example: 01*/
 let numbers = [1,2,3,4];
 let doubled = numbers.map(function(num){
@@ -19,6 +20,7 @@ let plus5marks = marks.map(function(marks){
 console.log(plus5marks);
 
 /*Filter()-Select data (Is used to keep some items from an array i.e it keeps item that match a condition)*/
+
 /*Example: 01*/
 let numbers1 = [10,20,30,40,50];
 let bigNumbers = numbers1.filter(function(num){
@@ -41,6 +43,7 @@ let newmarks = marks1.filter(function(marks1){
 console.log(newmarks);
 
 /*reduce()-Combine values ( Is ysed to convert entire array into one single value i.e sum of number,total,counting values etc)*/
+
 /*Example: 01*/
 let numbers2 = [10,20,30,40];
 let total = numbers2.reduce(function(acc,num){
@@ -62,7 +65,9 @@ let total_price = prices.reduce(function(acc,num){
 },0);
 console.log(total_price);
 
-/*Mini Challenge*/
+/*Mini Challenge : use filter and map together;
+ 1)Filter numbers grweater than 20,
+ 2)Multiply the filter number by 2*/
 let numbers3 = [5,12,8,20,3];
 let filter = numbers3.filter(function(num){
     return num>10;
@@ -83,3 +88,18 @@ let mc = numbers4
         return num * 2;
 });
 console.log(mc);
+
+/*Mini Challenge : use filter, map and reduce together*/
+let numbers5 = [9,13,30,21,18];
+let final = numbers5
+    .filter(function(num){
+    return num > 14;
+})
+    .map(function(num){
+        return num * 2;
+})
+    .reduce(function(acc,num){
+        return acc + num;
+},0);
+console.log(final);
+
