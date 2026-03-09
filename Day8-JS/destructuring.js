@@ -1,4 +1,5 @@
 /*Destructuring*/
+/*Object Destructuring*/
 const person = {
     name: "Sudeep",
     age: 20,
