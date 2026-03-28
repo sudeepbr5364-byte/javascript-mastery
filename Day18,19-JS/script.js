@@ -31,8 +31,35 @@ addBtn.addEventListener("click", function () {
 function addTaskToUI(task) {
   let li = document.createElement("li");
   li.innerText = task;
-
-  let delBtn = document.createElement("button");
+// Checkbox for marking as done
+let checkBox = document.createElement("input");
+checkBox.type = "checkbox"; 
+checkBox.addEventListener("change", function() {
+  if(checkBox.checked) {
+    li.style.textDecoration = "line-through";
+  } else {
+    li.style.textDecoration = "none";
+  }
+});
+li.prepend(checkBox);
+// Edit button
+let editBtn = document.createElement("button");
+editBtn.innerText = "Edit";
+editBtn.addEventListener("click", function() {
+  let newTask = prompt("Edit task:", task);
+  if(newTask !== null && newTask !== "") {
+    li.childNodes[1].nodeValue = newTask; // Update the text node
+    // Update the task in the array and localStorage
+    let index = tasks.indexOf(task);
+    if(index !== -1) {
+      tasks[index] = newTask;
+    }
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }
+});
+li.appendChild(editBtn);
+// Delete button
+let delBtn = document.createElement("button");
   delBtn.innerText = "Delete";
 
   delBtn.addEventListener("click", function () {
